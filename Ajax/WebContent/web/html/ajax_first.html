@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+$(function(){
+	
+	$("input").blur(function(){
+		var uname=$(this).val();
+		$.ajax(
+				{
+					url:"first",
+					type:"POST",
+					data:{"uname":uname},
+					success:function(result){
+						alert(result);
+					},
+					error:function(){
+						alert("出错了！");
+					},
+					complete:function(){
+						alter("已完成！");
+					} 
+					
+					
+				}
+		
+		);
+	});
+	
+}
+		
+		
+		);
+
+
+</script>
+</head>
+<body>
+<form>
+			用户名：<input type="text" name="userName" /" /><span id="res"></span><br />
+			
+			<input type="submit" value="注册完成" />
+</form>
+</body>
+</html>
